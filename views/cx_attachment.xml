@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ 
+    Copyright (C) 2020 Cetmix OÜ
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU LESSER GENERAL PUBLIC LICENSE as
+    published by the Free Software Foundation, either version 3 of the
+    License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU LESSER GENERAL PUBLIC LICENSE for more details.
+
+    You should have received a copy of the GNU LESSER GENERAL PUBLIC LICENSE
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<odoo>
+
+<!--########################
+    # Attachment Blacklist #
+    ########################-->
+
+<!--## Tree ##-->
+    <record id="cx_blacklist_attachment_tree" model="ir.ui.view">
+        <field name="name">Blacklist</field>
+        <field name="model">cx.attachment.blacklist</field>
+        <field name="arch" type="xml">
+          <tree string="Blacklist">
+            <field name="active" invisible="1"/>
+            <field name="name"/>
+            <field name="type"/>
+          </tree>
+        </field>
+    </record>
+
+<!--## Form ##-->
+    <record id="cx_blacklist_attachment_form" model="ir.ui.view">
+        <field name="name">Blacklist Record</field>
+        <field name="model">cx.attachment.blacklist</field>
+        <field name="arch" type="xml">
+          <form string="Blacklist">
+            <div colspan="2" class="oe_form_box_info oe_text_center" style="color:#ff0000;" attrs="{'invisible':[('active', '=', True)]}">
+              <b>Warning!</b> Already blacklisted attachments will remain blacklisted. Delete blacklist to un-blacklist them.
+            </div>
+            <sheet>
+              <div class="oe_button_box" name="button_box">
+                <button name="open_blacklisted" type="object" class="oe_stat_button" icon="fa-search" string="Blacklisted"/>
+                <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                  <field name="active" widget="boolean_button" options="{&quot;terminology&quot;: &quot;archive&quot;}"/>
+                </button>
+              </div>
+              <group name="base">
+                <field name="name"/>
+                <field name="type" attrs="{'readonly':[('id', '&gt;', 0)]}"/>
+                <field name="checksum" attrs="{'invisible':[('type', '!=', 'c')],'required':[('type', '=', 'c')]}"/>
+                <field name="pattern" attrs="{'invisible':[('type', '!=', 'f')],'required':[('type', '=', 'f')]}"/>
+                <label for="condition" attrs="{'invisible':[('type', '!=', 'f')]}"/>
+                <div class="o_row" attrs="{'invisible':[('type', '!=', 'f')]}">
+                    <field name="condition" placeholder="any size"/>
+                    <field name="size" attrs="{'invisible':[('condition', '=', False)],'required':[('condition', '!=', False)]}"/> <field name="unit" attrs="{'invisible':[('condition', '=', False)],'required':[('condition', '!=', False)]}"/>
+                </div>
+              </group>
+              <div attrs="{'invisible':[('type', '!=', 'f')]}">
+                Comma-separated string of OS-shell-style filename patterns (e.g. *.exe,logo.jpg,archive?.zip)<br/>
+                Specify file size if you want to blacklist only the files that meet particular size criteria
+              </div>
+              <div style="color:#336600;" attrs="{'invisible':[('type', '!=', 'c')]}">
+                To create this type of blacklist entry easily go to "Attachments", select attachments you want to blacklist and choose "Blacklist" from "Action" menu
+              </div>
+
+              <field name="id" invisible="1"/>
+            </sheet>
+          </form>
+        </field>
+    </record>
+
+<!-- Search -->
+<record id="cx_attachment_blacklist_search" model="ir.ui.view">
+    <field name="model">cx.attachment.blacklist</field>
+    <field name="arch" type="xml">
+        <search string="Blacklist">
+            <field name="name"/>
+            <field name="pattern"/>
+            <separator/>
+            <filter name="archived"
+                string="Archived"
+                domain="[('active','=',False)]"/>
+            <group expand="1" string="Group By">
+                <filter string="Type" domain="[]" context="{'group_by':'type'}"/>
+            </group>
+        </search>
+    </field>
+</record>
+
+<!--## Action ##-->
+    <record id="action_cx_attachment_blacklist" model="ir.actions.act_window">
+      <field name="name">Blacklist</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">cx.attachment.blacklist</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+<!--## Menu ##-->
+
+<menuitem id="cx_att_blacklist_menu"
+    name="Attachment Blacklist"
+    action="action_cx_attachment_blacklist"
+    parent="base.next_id_9"
+    sequence="10"/>
+
+
+<!--###############################
+    # Attachment Blacklist Wizard #
+    ###############################-->
+
+<!-- ## Form view ## -->
+    <record model="ir.ui.view" id="cx_ir_attachment_wizard_form">
+     <field name="name">Blacklist Wizard</field>
+     <field name="model">cx.attachment.blacklist.wiz</field>
+     <field name="arch" type="xml">
+       <form string="Blacklist Attachments">
+         <sheet>
+           <div class="oe_form_box_info oe_text_center">
+               <p style="color:#ff0000;">
+                   <strong>Warning! Not only listed below but ALL(!) attachments with the same contents will be added to blacklist!
+                   </strong><br/>
+               </p>
+           </div>
+           <field name="attachment_ids" widget="many2many_binary"/>
+         </sheet>
+         <footer>
+           <button string="Blacklist" name="blacklist_attachments" type="object" class="btn-primary"/>
+           <button name="cancel" string="Cancel" special="cancel" class="oe_link"/>
+         </footer>
+       </form>
+     </field>
+    </record>
+
+<!-- "More" menu -->
+   <act_window id="cx_att_bl_wiz"
+       name="Blacklist"
+       src_model="ir.attachment"
+       res_model="cx.attachment.blacklist.wiz"
+       view_mode="form"
+       target="new"
+       key2="client_action_multi"/>
+
+<!--################
+   # ir.Attachment #
+   #################-->
+
+<!--## Form ## -->
+   <record id="cx_ir_attachment_form" model="ir.ui.view">
+       <field name="name">cx.ir.attachment.form</field>
+       <field name="model">ir.attachment</field>
+       <field name="inherit_id" ref="base.view_attachment_form"/>
+       <field name="arch" type="xml">
+         <label for="name" position="before">
+           <div class="oe_button_box" name="button_box">
+             <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+               <field name="active" widget="boolean_button" options="{&quot;terminology&quot;: &quot;archive&quot;}"/>
+             </button>
+           </div>
+         </label>
+         <field name="public" position="after">
+           <field name="blacklist_id" attrs="{'invisible':[('blacklist_id', '=', False)]}"/>
+         </field>
+       </field>
+   </record>
+
+</odoo>

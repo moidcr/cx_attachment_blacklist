@@ -1,0 +1,219 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* cx_attachment_blacklist
+#	* cx_attachment_blacklist_pro
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0-20181011\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-10-12 15:54+0000\n"
+"PO-Revision-Date: 2018-10-12 15:54+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: cx_attachment_blacklist
+#: model:ir.ui.view,arch_db:cx_attachment_blacklist.cx_blacklist_attachment_form
+msgid "<b>Warning!</b> Already blacklisted attachments will remain blacklisted. Delete blacklist to un-blacklist them."
+msgstr "<b>Advertencia!</b> Los adjuntos ya listados en lista negra continuarán listados. Elimine la lista negra para deslistarlos."
+
+#. module: cx_attachment_blacklist
+#: model:ir.ui.view,arch_db:cx_attachment_blacklist.cx_ir_attachment_wizard_form
+msgid "<strong>Warning! Not only listed below but ALL(!) attachments with the same contents will be added to blacklist!\n"
+"                   </strong><br/>"
+msgstr "<strong>Advertencia! No sólo los listados a continuación  sino TODOS(!) los adjuntos con el mismo contenido serán añadidos a la lista negra!\n"
+"                   </strong><br/>"
+
+#. module: cx_attachment_blacklist
+#: model:ir.model.fields,field_description:cx_attachment_blacklist.field_ir_attachment_active
+msgid "Active"
+msgstr "Activo"
+
+#. module: cx_attachment_blacklist
+#: model:ir.ui.view,arch_db:cx_attachment_blacklist.cx_attachment_blacklist_search
+msgid "Archived"
+msgstr "Archivado"
+
+#. modules: cx_attachment_blacklist, cx_attachment_blacklist_pro
+#. openerp-web
+#: model:ir.model,name:cx_attachment_blacklist.model_cx_attachment_blacklist
+#: model:ir.ui.menu,name:cx_attachment_blacklist.cx_att_blacklist_menu
+#: code:addons/cx_attachment_blacklist_pro/static/src/js/cx_frontend_mod.js:28
+#, python-format
+msgid "Attachment Blacklist"
+msgstr "Lista negra de Adjunto"
+
+#. module: cx_attachment_blacklist_pro
+#: code:addons/cx_attachment_blacklist_pro/controllers/cx_controllers.py:69
+#: code:addons/cx_attachment_blacklist_pro/controllers/cx_controllers.py:76
+#, python-format
+msgid "Attachment already exists: %s"
+msgstr "El adjunto ya existe: %s"
+
+#. module: cx_attachment_blacklist_pro
+#: code:addons/cx_attachment_blacklist_pro/controllers/cx_controllers.py:62
+#, python-format
+msgid "Attachment is blacklisted"
+msgstr "El adjunto es listado en lista negra"
+
+#. module: cx_attachment_blacklist
+#: model:ir.actions.act_window,name:cx_attachment_blacklist.action_cx_attachment_blacklist
+#: model:ir.actions.act_window,name:cx_attachment_blacklist.cx_att_bl_wiz
+#: model:ir.model.fields,field_description:cx_attachment_blacklist.field_ir_attachment_blacklist_id
+#: model:ir.model.fields,field_description:cx_attachment_blacklist.field_mrp_document_blacklist_id
+#: model:ir.ui.view,arch_db:cx_attachment_blacklist.cx_attachment_blacklist_search
+#: model:ir.ui.view,arch_db:cx_attachment_blacklist.cx_blacklist_attachment_form
+#: model:ir.ui.view,arch_db:cx_attachment_blacklist.cx_blacklist_attachment_tree
+#: model:ir.ui.view,arch_db:cx_attachment_blacklist.cx_ir_attachment_wizard_form
+msgid "Blacklist"
+msgstr "Lista negra"
+
+#. module: cx_attachment_blacklist
+#: model:ir.ui.view,arch_db:cx_attachment_blacklist.cx_ir_attachment_wizard_form
+msgid "Blacklist Attachments"
+msgstr "Lista negra de adjuntos"
+
+#. module: cx_attachment_blacklist_pro
+#. openerp-web
+#: code:addons/cx_attachment_blacklist_pro/static/src/xml/qweb.xml:8
+#, python-format
+msgid "Blacklist this attachment"
+msgstr "Listar en lista negra este adjunto"
+
+#. module: cx_attachment_blacklist
+#: model:ir.ui.view,arch_db:cx_attachment_blacklist.cx_blacklist_attachment_form
+msgid "Blacklisted"
+msgstr "Listado en lista negra"
+
+#. module: cx_attachment_blacklist
+#: code:addons/cx_attachment_blacklist/models/cx_attachment.py:277
+#, python-format
+msgid "Blacklisted Attachments"
+msgstr "Lista negra de adjuntos"
+
+#. module: cx_attachment_blacklist
+#: code:addons/cx_attachment_blacklist/models/cx_attachment.py:73
+#, python-format
+msgid "Blacklisted by contents"
+msgstr "Listado en lista negra por contenido"
+
+#. module: cx_attachment_blacklist
+#: model:ir.ui.view,arch_db:cx_attachment_blacklist.cx_ir_attachment_wizard_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: cx_attachment_blacklist
+#: model:ir.model.fields,help:cx_attachment_blacklist.field_cx_attachment_blacklist_pattern
+msgid "Comma-separated string of OS-shell-style filename patterns (e.g. *.exe,logo.jpg,archive?.zip)"
+msgstr "Una cadena de patrones de nombres de estilo OS-shell separados por coma (p.e. *.exe,logo.jpg,archive?.zip)"
+
+#. module: cx_attachment_blacklist
+#: model:ir.ui.view,arch_db:cx_attachment_blacklist.cx_blacklist_attachment_form
+msgid "Comma-separated string of OS-shell-style filename patterns (e.g. *.exe,logo.jpg,archive?.zip)<br/>\n"
+"                Specify file size if you want to blacklist only the files that meet particular size criteria"
+msgstr "Una cadena de patrones de nombres de estilo OS-shell separados por coma (p.e. *.exe,logo.jpg,archive?.zip)<br/>\n"
+"                Especifique el tamaño de archivo si quiere listar en lista negra sólo los archivos que cumplen un criterio de tamaño particular"
+
+#. module: cx_attachment_blacklist
+#: selection:cx.attachment.blacklist,type:0
+msgid "Contents"
+msgstr "Contenidos"
+
+#. module: cx_attachment_blacklist
+#: model:ir.model.fields,field_description:cx_attachment_blacklist.field_cx_attachment_blacklist_condition
+msgid "File Size"
+msgstr "Tama�o del archivo"
+
+#. module: cx_attachment_blacklist
+#: selection:cx.attachment.blacklist,type:0
+#: model:ir.model.fields,field_description:cx_attachment_blacklist.field_cx_attachment_blacklist_pattern
+msgid "Filename Patterns"
+msgstr "Patrones de nombre de archivo"
+
+#. module: cx_attachment_blacklist
+#: model:ir.ui.view,arch_db:cx_attachment_blacklist.cx_attachment_blacklist_search
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: cx_attachment_blacklist
+#: selection:cx.attachment.blacklist,unit:0
+msgid "Kilobytes"
+msgstr "Kilobytes"
+
+#. module: cx_attachment_blacklist
+#: model:res.groups,comment:cx_attachment_blacklist.group_att_blacklist
+#: model:res.groups,name:cx_attachment_blacklist.group_att_blacklist
+msgid "Manage Attachment Blacklist"
+msgstr "Administrar lista negra de adjuntos"
+
+#. module: cx_attachment_blacklist_pro
+#. openerp-web
+#: code:addons/cx_attachment_blacklist_pro/static/src/xml/qweb.xml:11
+#, python-format
+msgid "Manage Blacklists"
+msgstr "Administrar listas negras"
+
+#. module: cx_attachment_blacklist
+#: selection:cx.attachment.blacklist,unit:0
+msgid "Megabytes"
+msgstr "Megabytes"
+
+#. module: cx_attachment_blacklist
+#: model:ir.model,name:cx_attachment_blacklist.model_mail_message
+msgid "Message"
+msgstr "Mensaje"
+
+#. module: cx_attachment_blacklist
+#: model:ir.model.fields,field_description:cx_attachment_blacklist.field_cx_attachment_blacklist_size
+msgid "Size"
+msgstr "Tamaño"
+
+#. module: cx_attachment_blacklist
+#: code:addons/cx_attachment_blacklist/models/cx_attachment.py:364
+#, python-format
+msgid "Something horrible happened"
+msgstr "El archivo no puede ser adjuntado por normas de tamaño, tipo o contenido, contacte a su administrador!!"
+
+
+#. module: cx_attachment_blacklist
+#: code:addons/cx_attachment_blacklist/models/cx_attachment.py:364
+#, python-format
+msgid "The file cannot be attached, its size, type or content is not allowed!!"
+msgstr "El archivo no puede ser adjuntado por normas de tamaño, tipo o contenido, contacte a su administrador!!"
+
+
+#. module: cx_attachment_blacklist
+#: model:ir.ui.view,arch_db:cx_attachment_blacklist.cx_blacklist_attachment_form
+msgid "To create this type of blacklist entry easily go to \"Attachments\", select attachments you want to blacklist and choose \"Blacklist\" from \"Action\" menu"
+msgstr "Para crear este tipo de entrada fácilmente en lista negra vaya a \"Adjuntos\", seleccione los adjunstos a listar y escoja \"Lista negra\" en el menú \"Acción\""
+
+#. module: cx_attachment_blacklist
+#: model:ir.model.fields,field_description:cx_attachment_blacklist.field_cx_attachment_blacklist_type
+#: model:ir.ui.view,arch_db:cx_attachment_blacklist.cx_attachment_blacklist_search
+msgid "Type"
+msgstr "Tipo"
+
+#. module: cx_attachment_blacklist
+#: model:ir.model.fields,field_description:cx_attachment_blacklist.field_cx_attachment_blacklist_unit
+msgid "Unit"
+msgstr "Unidad"
+
+#. module: cx_attachment_blacklist
+#: model:ir.ui.view,arch_db:cx_attachment_blacklist.cx_blacklist_attachment_form
+msgid "any size"
+msgstr "cualquier tamaño"
+
+#. module: cx_attachment_blacklist
+#: model:ir.model,name:cx_attachment_blacklist.model_cx_attachment_blacklist_wiz
+msgid "cx.attachment.blacklist.wiz"
+msgstr "cx.attachment.blacklist.wiz"
+
+#. modules: cx_attachment_blacklist, cx_attachment_blacklist_pro
+#: model:ir.model,name:cx_attachment_blacklist.model_ir_attachment
+#: model:ir.model,name:cx_attachment_blacklist_pro.model_ir_attachment
+msgid "ir.attachment"
+msgstr "ir.attachment"

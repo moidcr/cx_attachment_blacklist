@@ -1,0 +1,198 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* cx_attachment_blacklist
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0-20181011\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-10-12 14:27+0000\n"
+"PO-Revision-Date: 2018-10-12 17:28+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 1.5.4\n"
+
+#. module: cx_attachment_blacklist
+#: model:ir.ui.view,arch_db:cx_attachment_blacklist.cx_blacklist_attachment_form
+msgid ""
+"<b>Warning!</b> Already blacklisted attachments will remain blacklisted. "
+"Delete blacklist to un-blacklist them."
+msgstr ""
+"<b>Внимание!</b> Уже заблокированные вложения останутся заблокированы. "
+"Удалите запись чёрного списка чтобы разблокировать их."
+
+#. module: cx_attachment_blacklist
+#: model:ir.ui.view,arch_db:cx_attachment_blacklist.cx_ir_attachment_wizard_form
+msgid ""
+"<strong>Warning! Not only listed below but ALL(!) attachments with the same "
+"contents will be added to blacklist!\n"
+"                   </strong><br/>"
+msgstr ""
+"<strong>Внимание! Не только данные но и ВСЕ вложения с аналогичным "
+"содержимым будут заблокированы!\n"
+"                   </strong><br/>"
+
+#. module: cx_attachment_blacklist
+#: model:ir.model.fields,field_description:cx_attachment_blacklist.field_ir_attachment_active
+msgid "Active"
+msgstr "Актив"
+
+#. module: cx_attachment_blacklist
+#: model:ir.ui.view,arch_db:cx_attachment_blacklist.cx_attachment_blacklist_search
+msgid "Archived"
+msgstr "Архивировано"
+
+#. module: cx_attachment_blacklist
+#: model:ir.model,name:cx_attachment_blacklist.model_cx_attachment_blacklist
+#: model:ir.ui.menu,name:cx_attachment_blacklist.cx_att_blacklist_menu
+msgid "Attachment Blacklist"
+msgstr "Чёрный список вложений"
+
+#. module: cx_attachment_blacklist
+#: model:ir.actions.act_window,name:cx_attachment_blacklist.action_cx_attachment_blacklist
+#: model:ir.actions.act_window,name:cx_attachment_blacklist.cx_att_bl_wiz
+#: model:ir.model.fields,field_description:cx_attachment_blacklist.field_ir_attachment_blacklist_id
+#: model:ir.model.fields,field_description:cx_attachment_blacklist.field_mrp_document_blacklist_id
+#: model:ir.ui.view,arch_db:cx_attachment_blacklist.cx_attachment_blacklist_search
+#: model:ir.ui.view,arch_db:cx_attachment_blacklist.cx_blacklist_attachment_form
+#: model:ir.ui.view,arch_db:cx_attachment_blacklist.cx_blacklist_attachment_tree
+#: model:ir.ui.view,arch_db:cx_attachment_blacklist.cx_ir_attachment_wizard_form
+msgid "Blacklist"
+msgstr "В чёрный список"
+
+#. module: cx_attachment_blacklist
+#: model:ir.ui.view,arch_db:cx_attachment_blacklist.cx_ir_attachment_wizard_form
+msgid "Blacklist Attachments"
+msgstr "Добавить в чёрный список"
+
+#. module: cx_attachment_blacklist
+#: model:ir.ui.view,arch_db:cx_attachment_blacklist.cx_blacklist_attachment_form
+msgid "Blacklisted"
+msgstr "В чёрном списке"
+
+#. module: cx_attachment_blacklist
+#: code:addons/cx_attachment_blacklist/models/cx_attachment.py:277
+#, python-format
+msgid "Blacklisted Attachments"
+msgstr "Чёрный список вложений"
+
+#. module: cx_attachment_blacklist
+#: code:addons/cx_attachment_blacklist/models/cx_attachment.py:73
+#, python-format
+msgid "Blacklisted by contents"
+msgstr "Заблокирован по содержанию"
+
+#. module: cx_attachment_blacklist
+#: model:ir.ui.view,arch_db:cx_attachment_blacklist.cx_ir_attachment_wizard_form
+msgid "Cancel"
+msgstr "Отменить"
+
+#. module: cx_attachment_blacklist
+#: model:ir.model.fields,help:cx_attachment_blacklist.field_cx_attachment_blacklist_pattern
+msgid ""
+"Comma-separated string of OS-shell-style filename patterns (e.g. *.exe,logo."
+"jpg,archive?.zip)"
+msgstr ""
+"Список шаблонов в формате файловой системы через запятую (например *.exe,"
+"logo.jpg,archive?.zip)"
+
+#. module: cx_attachment_blacklist
+#: model:ir.ui.view,arch_db:cx_attachment_blacklist.cx_blacklist_attachment_form
+msgid ""
+"Comma-separated string of OS-shell-style filename patterns (e.g. *.exe,logo."
+"jpg,archive?.zip)<br/>\n"
+"                Specify file size if you want to blacklist only the files "
+"that meet particular size criteria"
+msgstr ""
+"Список шаблонов в формате файловой системы через запятую (например *.exe,"
+"logo.jpg,archive?.zip)<br/>\n"
+"                Укажите параметры \"размер файла\" если нужно заблокировать "
+"только файлы определённого размера"
+
+#. module: cx_attachment_blacklist
+#: selection:cx.attachment.blacklist,type:0
+msgid "Contents"
+msgstr "Содержимое"
+
+#. module: cx_attachment_blacklist
+#: model:ir.model.fields,field_description:cx_attachment_blacklist.field_cx_attachment_blacklist_condition
+msgid "File Size"
+msgstr "Размер файла"
+
+#. module: cx_attachment_blacklist
+#: selection:cx.attachment.blacklist,type:0
+#: model:ir.model.fields,field_description:cx_attachment_blacklist.field_cx_attachment_blacklist_pattern
+msgid "Filename Patterns"
+msgstr "Шаблоны имени файла"
+
+#. module: cx_attachment_blacklist
+#: model:ir.ui.view,arch_db:cx_attachment_blacklist.cx_attachment_blacklist_search
+msgid "Group By"
+msgstr "Группировать по"
+
+#. module: cx_attachment_blacklist
+#: selection:cx.attachment.blacklist,unit:0
+msgid "Kilobytes"
+msgstr "Килобайт"
+
+#. module: cx_attachment_blacklist
+#: model:res.groups,comment:cx_attachment_blacklist.group_att_blacklist
+#: model:res.groups,name:cx_attachment_blacklist.group_att_blacklist
+msgid "Manage Attachment Blacklist"
+msgstr "Управлять чёрным списком вложений"
+
+#. module: cx_attachment_blacklist
+#: selection:cx.attachment.blacklist,unit:0
+msgid "Megabytes"
+msgstr "Мегабайт"
+
+#. module: cx_attachment_blacklist
+#: model:ir.model,name:cx_attachment_blacklist.model_mail_message
+msgid "Message"
+msgstr "Сообщение"
+
+#. module: cx_attachment_blacklist
+#: model:ir.model.fields,field_description:cx_attachment_blacklist.field_cx_attachment_blacklist_size
+msgid "Size"
+msgstr "Размер"
+
+#. module: cx_attachment_blacklist
+#: model:ir.ui.view,arch_db:cx_attachment_blacklist.cx_blacklist_attachment_form
+msgid ""
+"To create this type of blacklist entry easily go to \"Attachments\", select "
+"attachments you want to blacklist and choose \"Blacklist\" from \"Action\" "
+"menu"
+msgstr ""
+"Для того чтобы добавить данный тип чёрного списка перейдите в меню  "
+"\"Вложения\", выберите вложения, которые нужно заблокировать, и нажмите  \"В "
+"чёрный список\" в меню \"Дейстивие\" "
+
+#. module: cx_attachment_blacklist
+#: model:ir.model.fields,field_description:cx_attachment_blacklist.field_cx_attachment_blacklist_type
+#: model:ir.ui.view,arch_db:cx_attachment_blacklist.cx_attachment_blacklist_search
+msgid "Type"
+msgstr "Тип"
+
+#. module: cx_attachment_blacklist
+#: model:ir.model.fields,field_description:cx_attachment_blacklist.field_cx_attachment_blacklist_unit
+msgid "Unit"
+msgstr "Единица"
+
+#. module: cx_attachment_blacklist
+#: model:ir.ui.view,arch_db:cx_attachment_blacklist.cx_blacklist_attachment_form
+msgid "any size"
+msgstr "любой размер"
+
+#. module: cx_attachment_blacklist
+#: model:ir.model,name:cx_attachment_blacklist.model_cx_attachment_blacklist_wiz
+msgid "cx.attachment.blacklist.wiz"
+msgstr "cx.attachment.blacklist.wiz"
+
+#. module: cx_attachment_blacklist
+#: model:ir.model,name:cx_attachment_blacklist.model_ir_attachment
+msgid "ir.attachment"
+msgstr "ir.attachment"

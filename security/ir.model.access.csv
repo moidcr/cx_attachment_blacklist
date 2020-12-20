@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+att_blacklist_all,Blacklist Attachments,cx_attachment_blacklist.model_cx_attachment_blacklist,base.group_user,1,0,0,0
+att_blacklist_manage,Manage Attachments Blacklist,cx_attachment_blacklist.model_cx_attachment_blacklist,group_att_blacklist,1,1,1,1
